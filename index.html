@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Prueba Alert Logic</h1>
+            <div role="tabpanel">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#div_peliculas" aria-controls="div_actores" role="tab" data-toggle="tab">Peliculas</a></li>
+                    <li role="presentation"><a href="#div_actores" aria-controls="div_actores" role="tab" data-toggle="tab">Actores</a></li>
+                </ul>
+
+                <div id="myTab" class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="div_peliculas">
+                        <div class="row">
+                            <div class="form-group" style="margin-top: 5%;">               
+                                <div class="col-md-6 col-md-offset-3">
+                                    <input type="text" class="form-control" placeholder="Ingresa la pelicula que deseas buscar" id="search_movies">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top:5%;">
+                            <div id="load_movies">
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="div_actores">
+                        <div class="row">
+                            <div class="form-group" style="margin-top: 5%;">               
+                                <div class="col-md-6 col-md-offset-3">
+                                    <input type="text" class="form-control" placeholder="Ingresa el actor que deseas buscar" id="search_actors">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top:5%;">
+                            <div id="load_actors">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="modalDetail" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-3 imagen"></div>
+                                <div class="col-md-9 texto"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="modalDetailM" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-3 imagen"></div>
+                                <div class="col-md-9 texto"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/utils_prueba.js"></script> 
+
+    <script>
+        $(document).ready(function () {
+//            $('#myTab a[href="#div_peliculas"]').tab('show');
+            var consulta;
+
+            $("#search_movies").keyup(function (e) {
+                //obtenemos el texto introducido en el campo de búsqueda
+                consulta = $("#search_movies").val();
+                ajaxRequest("search", "movie", consulta, loadMovies);
+
+            });
+
+            $("#search_actors").keyup(function (e) {
+                //obtenemos el texto introducido en el campo de búsqueda
+                consulta = $("#search_actors").val();
+                ajaxRequest("search", "person", consulta, loadActors);
+
+            });
+        });
+
+    </script>
+</html>
