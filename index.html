@@ -5,50 +5,69 @@
         <title></title>
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
         <style>
+            html, body {
+                height: 100%;
+            }
+            .wrapper {
+                min-height: 100%;
+                height: auto !important;
+                height: 100%;
+            }
 
         </style>
     </head>
     <body>
-        <div class="container">
-            <h1>Prueba Alert Logic</h1>
-            <div role="tabpanel">
-                <ul class="nav nav-tabs" role="tablist">
-                    <li role="presentation" class="active"><a href="#div_peliculas" aria-controls="div_actores" role="tab" data-toggle="tab">Peliculas</a></li>
-                    <li role="presentation"><a href="#div_actores" aria-controls="div_actores" role="tab" data-toggle="tab">Actores</a></li>
-                </ul>
+        <div class="wrapper">
+            <div class="container">
+                <h1>Prueba Alert Logic</h1>
+                <div role="tabpanel">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#div_peliculas" aria-controls="div_actores" role="tab" data-toggle="tab">Peliculas</a></li>
+                        <li role="presentation"><a href="#div_actores" aria-controls="div_actores" role="tab" data-toggle="tab">Actores</a></li>
+                    </ul>
 
-                <div id="myTab" class="tab-content">
-                    <div role="tabpanel" class="tab-pane active" id="div_peliculas">
-                        <div class="row">
-                            <div class="form-group" style="margin-top: 5%;">               
-                                <div class="col-md-6 col-md-offset-3">
-                                    <input type="text" class="form-control" placeholder="Ingresa la pelicula que deseas buscar" id="search_movies">
+                    <div id="myTab" class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="div_peliculas">
+                            <div class="row">
+                                <div class="form-group" style="margin-top: 5%;">               
+                                    <div class="col-md-6 col-md-offset-3">
+                                        <input type="text" class="form-control" placeholder="Ingresa la pelicula que deseas buscar" id="search_movies">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row" style="margin-top:5%;">
-                            <div id="load_movies">
+                            <div class="row" style="margin-top:5%;">
+                                <div id="load_movies">
 
-                            </div>
-                        </div>
-
-                    </div>
-                    <div role="tabpanel" class="tab-pane" id="div_actores">
-                        <div class="row">
-                            <div class="form-group" style="margin-top: 5%;">               
-                                <div class="col-md-6 col-md-offset-3">
-                                    <input type="text" class="form-control" placeholder="Ingresa el actor que deseas buscar" id="search_actors">
                                 </div>
                             </div>
-                        </div>
-                        <div class="row" style="margin-top:5%;">
-                            <div id="load_actors">
 
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="div_actores">
+                            <div class="row">
+                                <div class="form-group" style="margin-top: 5%;">               
+                                    <div class="col-md-6 col-md-offset-3">
+                                        <input type="text" class="form-control" placeholder="Ingresa el actor que deseas buscar" id="search_actors">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top:5%;">
+                                <div id="load_actors">
+
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
+        </div>
+
+        <div class="footer">
+            <div class="col-md-12" style="background-color: #222; height: 100px;">
+                <div class="col-md-6">
+                    <p id="p_footer" style="font-size: 19px; padding-top: 30px;color: #337ab7;font-weight: 600;">Created by Juan Sebastian Hormaza Ricarde</p>
+                </div>
+            </div> 
         </div>
 
         <div id="modalDetail" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -69,7 +88,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div id="modalDetailM" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
